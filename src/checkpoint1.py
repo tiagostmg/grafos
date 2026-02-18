@@ -15,6 +15,6 @@ qty_edges = lambda x : int(x.size() / 2)
 
 data = [qty_edges(g.adj[i]) for i in range(g.V)]
 
-plt.hist(data, bins=30, color='skyblue', edgecolor='black')
+plt.hist(data, bins=g.V//100, color='blue', edgecolor='black')
 
 plt.show()
