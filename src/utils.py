@@ -8,15 +8,21 @@ def new_graph(file: Path) -> graph.Graph:
     g = graph.Graph(V)
     for _ in range(E):
       v, w = f.readline().split()
+      # node = g.adj[int(v)].first
+      # while node is not None:
+      #   if node.item == int(w):
+      #     continue
+      #   node = node.next
       g.add_edge(v, w)
   return g
 
 def print_graph(g: graph.Graph) -> None:
   print(f"{g.V} vertices, {g.E} edges")
   for v in range(g.V):
-    neighbors = []
+    neighbors = set()
+    print(f"{v}: ", end="")
     node = g.adj[v].first
     while node is not None:
-      neighbors.append(str(node.item))
+      print(f"{str(node.item)} ", end="")
       node = node.next
-    print(f"{v}: {' '.join(neighbors)}")
+    print()
