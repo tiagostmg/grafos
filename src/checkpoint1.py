@@ -6,7 +6,7 @@ file = Path(__file__).resolve().parent / "data" / "Email-Enron.txt"
 
 g = new_graph(file)
 
-# print_graph(g)
+print_graph(g)
 
 
 import matplotlib.pyplot as plt
