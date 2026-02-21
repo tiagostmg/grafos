@@ -6,7 +6,9 @@ def new_graph(file: Path):
     V = int(f.readline())
     E = int(f.readline())
     g = SimpleGraph(V)
-    for _ in range(E):
+    print(E)
+    print(E*2)
+    for _ in range(E*2):
       v, w = f.readline().split()
       g.add_edge(v, w)
   return g
