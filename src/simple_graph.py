@@ -69,8 +69,8 @@ class SimpleGraph:
         return False
 
     def degree(self, v):
-        return len(self.adj[v])
-
+        return self.adj[v].size()
+    
     def max_degree(self):
         max_deg = 0
         for v in self.V:
