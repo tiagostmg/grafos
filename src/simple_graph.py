@@ -33,7 +33,7 @@
  """
 from pathlib import Path
 
-from algs4.bag import Bag
+from bag import Bag
 
 
 class SimpleGraph:
@@ -46,9 +46,9 @@ class SimpleGraph:
             self.adj[v] = Bag()
 
     def __str__(self):
-        s = "%d vertices, %d edges\n" % (self.V, self.E)
-        s += "\n".join("%d: %s" % (v, " ".join(str(w)
-                                               for w in self.adj[v])) for v in range(self.V))
+        s = f"{self.V} vertices, {self.E} edges\n"
+        for v in range(self.V):
+            s += f"{v}: {str(self.adj[v])}\n"
         return s
 
     def add_edge(self, v, w):
@@ -69,11 +69,11 @@ class SimpleGraph:
         return False
 
     def degree(self, v):
-        return self.adj[v].size()
+        return len(self.adj[v])
     
     def max_degree(self):
         max_deg = 0
-        for v in self.V:
+        for v in self.adj:
             max_deg = max(max_deg, self.degree(v))
         return max_deg
 
@@ -84,17 +84,6 @@ class SimpleGraph:
                 if w == v:
                     count += 1
         return count
-    
-    def print_graph(self) -> None:
-      print(f"{self.V} vertices, {self.E} edges")
-      for v in range(self.V):
-        print(f"{v}: ", end="")
-        node = self.adj[v].first
-        while node is not None:
-          print(f"{str(node.item)} ", end="")
-          node = node.next
-        print()
-
 
 
 if __name__ == '__main__':
