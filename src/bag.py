@@ -42,7 +42,15 @@ class Bag:
         oldfirst = self.first
         self.first = Node(item, oldfirst)
         self.n += 1
-
+    
+    def to_list(self):
+        curr = self.first
+        lst = []
+        while curr is not None:
+            lst.append(curr.item)
+            curr = curr.next
+        return lst
+    
 
 if __name__ == '__main__':
     import sys
