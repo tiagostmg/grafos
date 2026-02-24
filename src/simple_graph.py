@@ -95,4 +95,4 @@ if __name__ == '__main__':
     for i in range(E):
         v, w = sys.stdin.readline().split()
         g.add_edge(v, w)
-    g.print_graph()
+    print(g)
