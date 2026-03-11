@@ -33,7 +33,4 @@ if __name__ == "__main__":
   df2.to_csv(file.with_name("edges.csv"), index=False)
   print(df2.head())
 
-
-
-# Depois que o csv foi gerado, colocamos em https://medialab.github.io/table2net/
-# para gerar o arquivo que o Gephi pode ler.
+# Colocamos o csv no gephi.
